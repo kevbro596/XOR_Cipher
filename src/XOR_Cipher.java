@@ -4,5 +4,6 @@ public class XOR_Cipher {
     {
         System.out.println("Hello World");
         System.out.println("Hey Kevin, its me Drew.");
+        System.out.println("Hey Drew, Its me Kevin Shi");
     }
 }
