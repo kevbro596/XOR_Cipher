@@ -10,6 +10,9 @@ public class Runner {
         String str = scanner.nextLine();
         test.assignMessage(str);
 
+
         test.StringToBit();
+        test.randomKey();
+        test.compareToKey();
     }
 }
