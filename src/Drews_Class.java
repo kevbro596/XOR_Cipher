@@ -3,6 +3,8 @@ import java.util.ArrayList;
 
 public class Drews_Class {
     private ArrayList<String> message = new ArrayList<String>();
+    private ArrayList<Integer> asciiList = new ArrayList<Integer>();
+    private ArrayList<String> binaryList = new ArrayList<String>();
 
     public void assignMessage(String str){
         //Split string w/ no space in between
@@ -15,7 +17,6 @@ public class Drews_Class {
 
     public void StringToBit(){
         //Convert to ASCII Values first
-        ArrayList<Integer> asciiList = new ArrayList<Integer>();
         for (String s : message){
             //Convert string to char
             char ch = s.charAt(0);
@@ -23,8 +24,8 @@ public class Drews_Class {
             int ascii = ch;
             asciiList.add(ascii);
         }
+        System.out.println(asciiList);
         //Then convert to 8-Bit Binary
-        ArrayList<String> binaryList = new ArrayList<String>();
         for (int i = 0; i < asciiList.size(); i++){
             int asciiValue = asciiList.get(i);
             String binaryValue = "";
@@ -39,6 +40,7 @@ public class Drews_Class {
             }
             binaryList.add(binaryValue);
         }
+        System.out.println(binaryList);
     }
 
     public void BitToString(){
