@@ -77,9 +77,12 @@ public class Drews_Class {
         System.out.println(asciiList);
         //Converts ASCII values to String
         for (int i = 0; i < asciiList.size(); i++) {
-            char asciiCode = (char)asciiList.get(i);
-            message.set(i, asciiCode);
+            int value = asciiList.get(i);
+            char asciiCode = (char) value;
+            String str = "" + asciiCode;
+            message.set(i, str);
         }
+        System.out.println(message);
     }
 
     public void randomKey() {
