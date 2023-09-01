@@ -14,5 +14,6 @@ public class Runner {
         test.StringToBit();
         test.randomKey();
         test.compareToKey();
+        test.BitToString();
     }
 }

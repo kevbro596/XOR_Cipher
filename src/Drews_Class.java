@@ -4,9 +4,8 @@ import java.util.ArrayList;
 public class Drews_Class {
     private ArrayList<String> message = new ArrayList<String>();
     private ArrayList<Integer> asciiList = new ArrayList<Integer>();
-    private ArrayList<String> originalBinaryList = new ArrayList<String>();
+    private ArrayList<String> binaryList = new ArrayList<String>();
     private String key = "";
-    private ArrayList<String> newBinaryList = new ArrayList<String>();
 
     public void assignMessage(String str){
         //Split string w/ no space in between
@@ -26,6 +25,7 @@ public class Drews_Class {
             int ascii = ch;
             asciiList.add(ascii);
         }
+        System.out.println(asciiList);
         //Then convert to 8-Bit Binary
         for (int i = 0; i < asciiList.size(); i++){
             int asciiValue = asciiList.get(i);
@@ -39,13 +39,47 @@ public class Drews_Class {
             while (binaryValue.length() < 8){
                 binaryValue = "0" + binaryValue;
             }
-            originalBinaryList.add(binaryValue);
+            binaryList.add(binaryValue);
         }
-        System.out.println(originalBinaryList);
+        System.out.println(binaryList);
     }
 
     public void BitToString(){
-
+        //Converts Binary to ASCII values
+        for (int i = 0; i < binaryList.size(); i++){
+            int value = 0;
+            if (binaryList.get(i).substring(0, 1).equals("1")){
+                value += 128;
+            }
+            if (binaryList.get(i).substring(1, 2).equals("1")){
+                value += 64;
+            }
+            if (binaryList.get(i).substring(2, 3).equals("1")){
+                value += 32;
+            }
+            if (binaryList.get(i).substring(3, 4).equals("1")){
+                value += 16;
+            }
+            if (binaryList.get(i).substring(4, 5).equals("1")){
+                value += 8;
+            }
+            if (binaryList.get(i).substring(5, 6).equals("1")){
+                value += 4;
+            }
+            if (binaryList.get(i).substring(6, 7).equals("1")){
+                value += 2;
+            }
+            if (binaryList.get(i).substring(7, 8).equals("1")){
+                value += 1;
+            }
+            asciiList.set(i, value);
+        }
+        System.out.println(asciiList);
+        //Converts ASCII values to String
+        for (int i = 0; i < asciiList.size(); i++) {
+            char asciiCode = (char)asciiList.get(i);
+            message.set(i, asciiCode);
+        }
     }
 
     public void randomKey() {
@@ -59,11 +93,11 @@ public class Drews_Class {
 
     public void compareToKey(){
         //For loop to traverse each element of the ArrayList
-        for (int i = 0; i < originalBinaryList.size(); i++){
+        for (int i = 0; i < binaryList.size(); i++){
             String str = "";
             //For loop to traverse each letter in an element
             for (int j = 0; j < 8; j++){
-                String letter = originalBinaryList.get(i).substring(j,j+1);
+                String letter = binaryList.get(i).substring(j,j+1);
                 if (letter.equals(key.substring(j,j+1))){
                     str += "0";
                 }
@@ -71,9 +105,9 @@ public class Drews_Class {
                     str += "1";
                 }
             }
-            newBinaryList.add(str);
+            binaryList.set(i, str);
         }
-        System.out.println(newBinaryList);
+        System.out.println(binaryList);
     }
 
     public String toString(){
