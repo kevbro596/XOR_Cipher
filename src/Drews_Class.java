@@ -25,7 +25,6 @@ public class Drews_Class {
             int ascii = ch;
             asciiList.add(ascii);
         }
-        System.out.println(asciiList);
         //Then convert to 8-Bit Binary
         for (int i = 0; i < asciiList.size(); i++){
             int asciiValue = asciiList.get(i);
@@ -41,7 +40,6 @@ public class Drews_Class {
             }
             binaryList.add(binaryValue);
         }
-        System.out.println(binaryList);
     }
 
     public void BitToString(){
@@ -74,7 +72,6 @@ public class Drews_Class {
             }
             asciiList.set(i, value);
         }
-        System.out.println(asciiList);
         //Converts ASCII values to String
         for (int i = 0; i < asciiList.size(); i++) {
             int value = asciiList.get(i);
@@ -82,7 +79,6 @@ public class Drews_Class {
             String str = "" + asciiCode;
             message.set(i, str);
         }
-        System.out.println(message);
     }
 
     public void randomKey() {
@@ -91,7 +87,6 @@ public class Drews_Class {
             int random = (int)(Math.random() * 2);
             key += random;
         }
-        System.out.println(key);
     }
 
     public void compareToKey(){
@@ -110,7 +105,6 @@ public class Drews_Class {
             }
             binaryList.set(i, str);
         }
-        System.out.println(binaryList);
     }
 
     public String toString(){
