@@ -20,7 +20,7 @@ public class Runner {
         //Decryption Process
         test.StringToBit();
         test.compareToKey();
-        //test.BitToString();
+        test.BitToString();
         System.out.println("Decrypted Message: " + test.toString());
     }
 }
