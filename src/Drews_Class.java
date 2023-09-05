@@ -5,7 +5,7 @@ public class Drews_Class {
     private ArrayList<String> message = new ArrayList<String>();
     private ArrayList<Integer> asciiList = new ArrayList<Integer>();
     private ArrayList<String> binaryList = new ArrayList<String>();
-    private String key = "";
+    private ArrayList<String> key = new ArrayList<String>();
 
     public void assign(String str){
         //Split string w/ no space in between
@@ -88,10 +88,15 @@ public class Drews_Class {
     }
 
     public void randomKey() {
-        for(int i = 0; i < 8; i++) {
-            //Random generates to be a 1 or a 0
-            int random = (int)(Math.random() * 2);
-            key += random;
+        for (int i = 0; i < message.size(); i++){
+            String value = "";
+            for (int j = 0; j < 8; j++) {
+                //Random generates to be a 1 or a 0
+                int randomNum = (int) (Math.random() * 2);
+                String digit = "" + randomNum;
+                value += digit;
+            }
+            key.add(value);
         }
     }
 
@@ -102,7 +107,8 @@ public class Drews_Class {
             //For loop to traverse each letter in an element
             for (int j = 0; j < 8; j++){
                 String letter = binaryList.get(i).substring(j,j+1);
-                if (letter.equals(key.substring(j,j+1))){
+                String value = key.get(i).substring(j,j+1);
+                if (letter.equals(value)){
                     str += "0";
                 }
                 else{
