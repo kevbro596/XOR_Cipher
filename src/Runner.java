@@ -8,7 +8,7 @@ public class Runner {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter Desired Message:: ");
         String str = scanner.nextLine();
-        test.assignMessage(str);
+        test.assign(str);
         test.randomKey();
 
         //Encryption Process

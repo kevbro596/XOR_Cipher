@@ -7,23 +7,29 @@ public class Drews_Class {
     private ArrayList<String> binaryList = new ArrayList<String>();
     private String key = "";
 
-    public void assignMessage(String str){
+    public void assign(String str){
         //Split string w/ no space in between
         String[] split = str.split("");
         Arrays.asList(split);
+        //Assign message correct values
         for (String s : split){
             message.add(s);
+        }
+        //Fill asciiList and binaryList with placeholders
+        for (int i = 0; i < message.size(); i++){
+            asciiList.add(0);
+            binaryList.add("00000000");
         }
     }
 
     public void StringToBit(){
         //Convert to ASCII Values first
-        for (String s : message){
+        for (int i = 0; i < message.size(); i++){
             //Convert string to char
-            char ch = s.charAt(0);
+            char ch = message.get(i).charAt(0);
             //Convert char to ASCII value (Java internal)
             int ascii = ch;
-            asciiList.add(ascii);
+            asciiList.set(i, ascii);
         }
         //Then convert to 8-Bit Binary
         for (int i = 0; i < asciiList.size(); i++){
@@ -38,7 +44,7 @@ public class Drews_Class {
             while (binaryValue.length() < 8){
                 binaryValue = "0" + binaryValue;
             }
-            binaryList.add(binaryValue);
+            binaryList.set(i, binaryValue);
         }
     }
 
