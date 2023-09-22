@@ -70,4 +70,8 @@ public class Custom_Cipher
         }
         System.out.println(ASCII);
     }
+
+    public String toString(){
+        return "";
+    }
 }

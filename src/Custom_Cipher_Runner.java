@@ -11,5 +11,6 @@ public class Custom_Cipher_Runner {
         test.assignMessage(str);
         test.changeLetters();
         test.changeOthers();
+        System.out.println(test);
     }
 }
