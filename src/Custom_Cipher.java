@@ -59,13 +59,22 @@ public class Custom_Cipher
                ASCII.set(i, ascii);
            }
         }
+        System.out.println(ASCII);
         //Reversing ASCII values
         for (int i = 0; i < ASCII.size(); i++){
             if (ASCII.get(i) == 0){
                 break;
             }
             else{
-                for (int j = ASCII.get(i).)
+                int normal = ASCII.get(i);
+                int reversed = 0;
+                while (normal != 0){
+                    int digit = normal % 10;
+                    //Reversed * 10 to add digit to next placevalue
+                    reversed = (reversed * 10) + digit;
+                    normal /= 10;
+                }
+                ASCII.set(i, reversed);
             }
         }
         System.out.println(ASCII);
