@@ -71,7 +71,12 @@ public class Custom_Cipher
                 while (normal != 0){
                     int digit = normal % 10;
                     //Reversed * 10 to add digit to next placevalue
-                    reversed = (reversed * 10) + digit;
+                    if (reversed == 0){
+                        reversed = digit;
+                    }
+                    else{
+                        reversed = (reversed * 10) + digit;
+                    }
                     normal /= 10;
                 }
                 ASCII.set(i, reversed);
