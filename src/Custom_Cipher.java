@@ -62,18 +62,16 @@ public class Custom_Cipher
         System.out.println(ASCII);
         //Reversing ASCII values
         for (int i = 0; i < ASCII.size(); i++){
-            if (ASCII.get(i) == 0){
-                break;
-            }
-            else{
+            if (ASCII.get(i) != 0){
                 int normal = ASCII.get(i);
                 int reversed = 0;
                 while (normal != 0){
                     int digit = normal % 10;
-                    //Reversed * 10 to add digit to next placevalue
+                    //Can't multiply by 0 first time otherwise value will stay 0
                     if (reversed == 0){
                         reversed = digit;
                     }
+                    //Reversed *10 to add to next place value
                     else{
                         reversed = (reversed * 10) + digit;
                     }
@@ -83,9 +81,23 @@ public class Custom_Cipher
             }
         }
         System.out.println(ASCII);
+        //Converting to encrypted ASCII code
+        for (int i = 0; i < ASCII.size(); i++){
+            if (ASCII.get(i) != 0){
+                int value = ASCII.get(i);
+                char asciiCode = (char) value;
+                String str = "" + asciiCode;
+                message.set(i, str);
+            }
+        }
     }
 
     public String toString(){
-        return "";
+        String output = "";
+        //Populates output with messages' values
+        for (String s : message){
+            output += s;
+        }
+        return output;
     }
 }

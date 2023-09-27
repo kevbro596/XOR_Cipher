@@ -12,5 +12,8 @@ public class Custom_Cipher_Runner {
         test.changeLetters();
         test.changeOthers();
         System.out.println(test);
+        test.changeLetters();
+        test.changeOthers();
+        System.out.println(test);
     }
 }

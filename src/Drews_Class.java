@@ -52,28 +52,29 @@ public class Drews_Class {
         //Converts Binary to ASCII values
         for (int i = 0; i < binaryList.size(); i++){
             int value = 0;
-            if (binaryList.get(i).substring(0, 1).equals("1")){
+            String binary1 = binaryList.get(i);
+            if (binary1.substring(0, 1).equals("1")){
                 value += 128;
             }
-            if (binaryList.get(i).substring(1, 2).equals("1")){
+            if (binary1.substring(1, 2).equals("1")){
                 value += 64;
             }
-            if (binaryList.get(i).substring(2, 3).equals("1")){
+            if (binary1.substring(2, 3).equals("1")){
                 value += 32;
             }
-            if (binaryList.get(i).substring(3, 4).equals("1")){
+            if (binary1.substring(3, 4).equals("1")){
                 value += 16;
             }
-            if (binaryList.get(i).substring(4, 5).equals("1")){
+            if (binary1.substring(4, 5).equals("1")){
                 value += 8;
             }
-            if (binaryList.get(i).substring(5, 6).equals("1")){
+            if (binary1.substring(5, 6).equals("1")){
                 value += 4;
             }
-            if (binaryList.get(i).substring(6, 7).equals("1")){
+            if (binary1.substring(6, 7).equals("1")){
                 value += 2;
             }
-            if (binaryList.get(i).substring(7, 8).equals("1")){
+            if (binary1.substring(7, 8).equals("1")){
                 value += 1;
             }
             asciiList.set(i, value);
