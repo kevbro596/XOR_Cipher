@@ -59,6 +59,7 @@ public class Custom_Cipher
                ASCII.set(i, ascii);
            }
         }
+
         System.out.println(ASCII);
         //Reversing ASCII values
         for (int i = 0; i < ASCII.size(); i++){
