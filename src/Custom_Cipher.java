@@ -35,12 +35,9 @@ public class Custom_Cipher
                 }
             }
         }
-        System.out.println(message);
     }
 
-    public void changeOthers()
-    {
-        //Converting correct values to ASCII
+    public void convertToASCII(){
         for(int i = 0; i < ASCII.size(); i++)
         {
             int j = 0;
@@ -60,8 +57,10 @@ public class Custom_Cipher
                 ASCII.set(i, str);
             }
         }
+    }
 
-        System.out.println(ASCII);
+    public void changeOthers()
+    {
         //Reversing ASCII values
         for (int i = 0; i < ASCII.size(); i++){
             if (ASCII.get(i).equals("0")) {
@@ -80,7 +79,6 @@ public class Custom_Cipher
                 ASCII.set(i, reversed);
             }
         }
-        System.out.println(ASCII);
         //Converting to encrypted ASCII code
         for (int i = 0; i < ASCII.size(); i++){
             if (ASCII.get(i).equals("0")) {
