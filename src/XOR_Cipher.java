@@ -46,6 +46,7 @@ public class XOR_Cipher {
             }
             binaryList.set(i, binaryValue);
         }
+        System.out.println(binaryList);
     }
 
     public void BitToString(){
@@ -98,6 +99,7 @@ public class XOR_Cipher {
             }
             key.add(value);
         }
+        System.out.println(key);
     }
 
     public void compareToKey(){
@@ -117,6 +119,7 @@ public class XOR_Cipher {
             }
             binaryList.set(i, str);
         }
+        System.out.println(binaryList);
     }
 
     public String toString(){
